@@ -1,0 +1,33 @@
+unDTS 1.8 validation - 17 November 2026
+
+Passed on the rebuilt Windows x64 executable:
+- Isolated billion-kb/s spike leaves axis range unchanged
+- Startup outlier, returning to normal, rolling expiry and inter-file gaps
+- Consecutive high readings expand the axis
+- Missing, negative and non-finite samples do not affect scaling
+- Rendered amber spike cap, visible normal trace and red completion bars
+- Two real conversions retain markers and separate file traces
+- Final XAML loads and lays out at minimum window size with log expanded
+- Convert queue button completes an actual DTS-to-AC3 conversion
+- AAC-only and silent inputs rejected; actual DTS accepted
+- Rejection tooltip and mixed-batch behavior
+- Existing integration suite: AC3 640 kb/s, default/all track selection,
+  video/subtitle preservation, filename handling, source byte integrity,
+  output collision handling, corrupt input and cancellation cleanup
+
+The included GraphScaleChecks.cs contains the new scaling/render regressions.
+Approved graffiti logo embedded in the executable; UI layout and conversion rechecked.
+Logo optimized to 320 x 107 pixels. Rebuilt app passes final XAML layout,
+image loading and Convert queue checks with the smaller embedded asset.
+
+Custom icon: all seven ICO frames decoded, Windows EXE icon extraction passed,
+and application initialization loads its explicit window icon successfully.
+
+1.8 regression checks passed:
+- Repeated timestamps preserve byte deltas for the next usable interval
+- Buffered writes do not create false zero dips; tiny intervals accumulate
+- Brief missing graph samples stay connected; long gaps stay visible
+- Completion/failure boundaries reset smoothing and break the trace
+- Smoothing reduces jumps and responds promptly to sustained changes
+- Single-spike axis protection and bounded smoothing tail retained
+- Complete engine integration suite rerun, plus final UI conversion check
